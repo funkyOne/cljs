@@ -62,7 +62,7 @@
 
 (defn print-primes
   "Accepts start and end of range, accumulated map of existing prime numbers in shape of {:number true}
-  prints primer numbers in range and returns extended(or the same) map"
+  prints prime numbers in range and returns extended(or the same) map"
   [start end acc last-checked]
   (let [[acc last-checked] (ensure-prime-generated start acc last-checked)]
     (reduce (fn [[last-checked acc] i] (print-if-prime i acc last-checked)) [[last-checked acc] start] (range (dec start) (inc end)))
